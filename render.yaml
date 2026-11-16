@@ -1,0 +1,11 @@
+# Render Blueprint: deploys index.html as a free static site.
+services:
+  - type: web
+    name: merger-arb-desk
+    runtime: static
+    buildCommand: "echo static site, no build"
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
